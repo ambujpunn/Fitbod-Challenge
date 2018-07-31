@@ -13,6 +13,8 @@
 		6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB60210FE2C80087A913 /* Assets.xcassets */; };
 		6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */; };
 		6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */; };
+		6109FB7B210FE3130087A913 /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB7A210FE3130087A913 /* workoutData.txt */; };
+		6109FB7D210FE32E0087A913 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB7C210FE32E0087A913 /* WorkoutData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		6109FB6A210FE2C90087A913 /* Fitbod-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitbod-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbod_ChallengeTests.swift; sourceTree = "<group>"; };
 		6109FB70210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6109FB7A210FE3130087A913 /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
+		6109FB7C210FE32E0087A913 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		6109FB58210FE2C70087A913 /* Fitbod-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				6109FB79210FE3010087A913 /* Input */,
 				6109FB59210FE2C70087A913 /* AppDelegate.swift */,
 				6109FB5B210FE2C70087A913 /* ViewController.swift */,
 				6109FB5D210FE2C70087A913 /* Main.storyboard */,
@@ -94,6 +99,15 @@
 				6109FB70210FE2C90087A913 /* Info.plist */,
 			);
 			path = "Fitbod-ChallengeTests";
+			sourceTree = "<group>";
+		};
+		6109FB79210FE3010087A913 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				6109FB7A210FE3130087A913 /* workoutData.txt */,
+				6109FB7C210FE32E0087A913 /* WorkoutData.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +193,7 @@
 			files = (
 				6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */,
 				6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */,
+				6109FB7B210FE3130087A913 /* workoutData.txt in Resources */,
 				6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +214,7 @@
 			files = (
 				6109FB5C210FE2C70087A913 /* ViewController.swift in Sources */,
 				6109FB5A210FE2C70087A913 /* AppDelegate.swift in Sources */,
+				6109FB7D210FE32E0087A913 /* WorkoutData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
