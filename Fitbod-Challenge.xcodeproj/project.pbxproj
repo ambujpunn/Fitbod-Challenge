@@ -13,8 +13,9 @@
 		6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB60210FE2C80087A913 /* Assets.xcassets */; };
 		6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */; };
 		6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */; };
-		6109FB7B210FE3130087A913 /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB7A210FE3130087A913 /* workoutData.txt */; };
 		6109FB7D210FE32E0087A913 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB7C210FE32E0087A913 /* WorkoutData.swift */; };
+		A620E3DF23BB15D51F165199 /* Pods_Fitbod_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */; };
+		DA22DFC22C99432E6A91723E /* Pods_Fitbod_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A539CC7C6A97939709D69BB /* Pods_Fitbod_ChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A539CC7C6A97939709D69BB /* Pods_Fitbod_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitbod_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1230B7B23A6D718ED33ED2 /* Pods-Fitbod-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-ChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-ChallengeTests/Pods-Fitbod-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6109FB56210FE2C70087A913 /* Fitbod-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitbod-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6109FB59210FE2C70087A913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6109FB5B210FE2C70087A913 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +41,11 @@
 		6109FB6A210FE2C90087A913 /* Fitbod-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitbod-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbod_ChallengeTests.swift; sourceTree = "<group>"; };
 		6109FB70210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6109FB7A210FE3130087A913 /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
 		6109FB7C210FE32E0087A913 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
+		88FD2D253E48B0BBBC6424EF /* Pods-Fitbod-ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-ChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-ChallengeTests/Pods-Fitbod-ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B72FA5D274AF4FCDB06BA490 /* Pods-Fitbod-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitbod_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB595895E7AC36CE7898EFC /* Pods-Fitbod-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A620E3DF23BB15D51F165199 /* Pods_Fitbod_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +61,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA22DFC22C99432E6A91723E /* Pods_Fitbod_ChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52092FEA92E16678A8BCF9CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFB595895E7AC36CE7898EFC /* Pods-Fitbod-Challenge.debug.xcconfig */,
+				B72FA5D274AF4FCDB06BA490 /* Pods-Fitbod-Challenge.release.xcconfig */,
+				88FD2D253E48B0BBBC6424EF /* Pods-Fitbod-ChallengeTests.debug.xcconfig */,
+				1C1230B7B23A6D718ED33ED2 /* Pods-Fitbod-ChallengeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6109FB4D210FE2C60087A913 = {
 			isa = PBXGroup;
 			children = (
 				6109FB58210FE2C70087A913 /* Fitbod-Challenge */,
 				6109FB6D210FE2C90087A913 /* Fitbod-ChallengeTests */,
 				6109FB57210FE2C70087A913 /* Products */,
+				52092FEA92E16678A8BCF9CD /* Pods */,
+				C31FCFEEE54949D4CD615CB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,10 +125,18 @@
 		6109FB79210FE3010087A913 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				6109FB7A210FE3130087A913 /* workoutData.txt */,
 				6109FB7C210FE32E0087A913 /* WorkoutData.swift */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		C31FCFEEE54949D4CD615CB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */,
+				0A539CC7C6A97939709D69BB /* Pods_Fitbod_ChallengeTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6109FB73210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-Challenge" */;
 			buildPhases = (
+				4073C40E80E26614E7F901B6 /* [CP] Check Pods Manifest.lock */,
 				6109FB52210FE2C70087A913 /* Sources */,
 				6109FB53210FE2C70087A913 /* Frameworks */,
 				6109FB54210FE2C70087A913 /* Resources */,
+				31DF1C99F759A4261B8BA906 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6109FB76210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-ChallengeTests" */;
 			buildPhases = (
+				10BA33F685350CAC782C4F7D /* [CP] Check Pods Manifest.lock */,
 				6109FB66210FE2C90087A913 /* Sources */,
 				6109FB67210FE2C90087A913 /* Frameworks */,
 				6109FB68210FE2C90087A913 /* Resources */,
@@ -193,7 +225,6 @@
 			files = (
 				6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */,
 				6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */,
-				6109FB7B210FE3130087A913 /* workoutData.txt in Resources */,
 				6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +237,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10BA33F685350CAC782C4F7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fitbod-ChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31DF1C99F759A4261B8BA906 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSVImporter/CSVImporter.framework",
+				"${BUILT_PRODUCTS_DIR}/HandySwift/HandySwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSVImporter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandySwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4073C40E80E26614E7F901B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fitbod-Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6109FB52210FE2C70087A913 /* Sources */ = {
@@ -372,6 +462,7 @@
 		};
 		6109FB74210FE2C90087A913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFB595895E7AC36CE7898EFC /* Pods-Fitbod-Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +480,7 @@
 		};
 		6109FB75210FE2C90087A913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72FA5D274AF4FCDB06BA490 /* Pods-Fitbod-Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +498,7 @@
 		};
 		6109FB77210FE2C90087A913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88FD2D253E48B0BBBC6424EF /* Pods-Fitbod-ChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -426,6 +519,7 @@
 		};
 		6109FB78210FE2C90087A913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C1230B7B23A6D718ED33ED2 /* Pods-Fitbod-ChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

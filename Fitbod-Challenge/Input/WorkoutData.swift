@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CSVImporter
 
 struct ExerciseSet {
     let name: String
@@ -26,6 +27,6 @@ struct WorkoutData {
     // MARK - Private
     
     func convertCSVFile(_ fileName: String) -> String {
-        
+        return ""
     }
 }
