@@ -14,6 +14,7 @@
 		6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */; };
 		6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */; };
 		6109FB7D210FE32E0087A913 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB7C210FE32E0087A913 /* WorkoutData.swift */; };
+		612546BA210FF25A001AB56B /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 612546B9210FF25A001AB56B /* workoutData.txt */; };
 		A620E3DF23BB15D51F165199 /* Pods_Fitbod_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */; };
 		DA22DFC22C99432E6A91723E /* Pods_Fitbod_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A539CC7C6A97939709D69BB /* Pods_Fitbod_ChallengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbod_ChallengeTests.swift; sourceTree = "<group>"; };
 		6109FB70210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6109FB7C210FE32E0087A913 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
+		612546B9210FF25A001AB56B /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
 		88FD2D253E48B0BBBC6424EF /* Pods-Fitbod-ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-ChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-ChallengeTests/Pods-Fitbod-ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B72FA5D274AF4FCDB06BA490 /* Pods-Fitbod-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitbod_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 		6109FB79210FE3010087A913 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				612546B9210FF25A001AB56B /* workoutData.txt */,
 				6109FB7C210FE32E0087A913 /* WorkoutData.swift */,
 			);
 			path = Input;
@@ -225,6 +228,7 @@
 			files = (
 				6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */,
 				6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */,
+				612546BA210FF25A001AB56B /* workoutData.txt in Resources */,
 				6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
