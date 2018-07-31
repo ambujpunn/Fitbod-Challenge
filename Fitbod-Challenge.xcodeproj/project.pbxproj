@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6109FB5A210FE2C70087A913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB59210FE2C70087A913 /* AppDelegate.swift */; };
+		6109FB5C210FE2C70087A913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB5B210FE2C70087A913 /* ViewController.swift */; };
+		6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB5D210FE2C70087A913 /* Main.storyboard */; };
+		6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB60210FE2C80087A913 /* Assets.xcassets */; };
+		6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */; };
+		6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6109FB6B210FE2C90087A913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6109FB4E210FE2C60087A913 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6109FB55210FE2C70087A913;
+			remoteInfo = "Fitbod-Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6109FB56210FE2C70087A913 /* Fitbod-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitbod-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6109FB59210FE2C70087A913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6109FB5B210FE2C70087A913 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6109FB5E210FE2C70087A913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6109FB60210FE2C80087A913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6109FB63210FE2C80087A913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6109FB65210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6109FB6A210FE2C90087A913 /* Fitbod-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitbod-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbod_ChallengeTests.swift; sourceTree = "<group>"; };
+		6109FB70210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6109FB53210FE2C70087A913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6109FB67210FE2C90087A913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6109FB4D210FE2C60087A913 = {
+			isa = PBXGroup;
+			children = (
+				6109FB58210FE2C70087A913 /* Fitbod-Challenge */,
+				6109FB6D210FE2C90087A913 /* Fitbod-ChallengeTests */,
+				6109FB57210FE2C70087A913 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6109FB57210FE2C70087A913 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6109FB56210FE2C70087A913 /* Fitbod-Challenge.app */,
+				6109FB6A210FE2C90087A913 /* Fitbod-ChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6109FB58210FE2C70087A913 /* Fitbod-Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				6109FB59210FE2C70087A913 /* AppDelegate.swift */,
+				6109FB5B210FE2C70087A913 /* ViewController.swift */,
+				6109FB5D210FE2C70087A913 /* Main.storyboard */,
+				6109FB60210FE2C80087A913 /* Assets.xcassets */,
+				6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */,
+				6109FB65210FE2C90087A913 /* Info.plist */,
+			);
+			path = "Fitbod-Challenge";
+			sourceTree = "<group>";
+		};
+		6109FB6D210FE2C90087A913 /* Fitbod-ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */,
+				6109FB70210FE2C90087A913 /* Info.plist */,
+			);
+			path = "Fitbod-ChallengeTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6109FB55210FE2C70087A913 /* Fitbod-Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6109FB73210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-Challenge" */;
+			buildPhases = (
+				6109FB52210FE2C70087A913 /* Sources */,
+				6109FB53210FE2C70087A913 /* Frameworks */,
+				6109FB54210FE2C70087A913 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fitbod-Challenge";
+			productName = "Fitbod-Challenge";
+			productReference = 6109FB56210FE2C70087A913 /* Fitbod-Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6109FB69210FE2C90087A913 /* Fitbod-ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6109FB76210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-ChallengeTests" */;
+			buildPhases = (
+				6109FB66210FE2C90087A913 /* Sources */,
+				6109FB67210FE2C90087A913 /* Frameworks */,
+				6109FB68210FE2C90087A913 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6109FB6C210FE2C90087A913 /* PBXTargetDependency */,
+			);
+			name = "Fitbod-ChallengeTests";
+			productName = "Fitbod-ChallengeTests";
+			productReference = 6109FB6A210FE2C90087A913 /* Fitbod-ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6109FB4E210FE2C60087A913 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Ambuj Punn";
+				TargetAttributes = {
+					6109FB55210FE2C70087A913 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					6109FB69210FE2C90087A913 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 6109FB55210FE2C70087A913;
+					};
+				};
+			};
+			buildConfigurationList = 6109FB51210FE2C60087A913 /* Build configuration list for PBXProject "Fitbod-Challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6109FB4D210FE2C60087A913;
+			productRefGroup = 6109FB57210FE2C70087A913 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6109FB55210FE2C70087A913 /* Fitbod-Challenge */,
+				6109FB69210FE2C90087A913 /* Fitbod-ChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6109FB54210FE2C70087A913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */,
+				6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */,
+				6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6109FB68210FE2C90087A913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6109FB52210FE2C70087A913 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6109FB5C210FE2C70087A913 /* ViewController.swift in Sources */,
+				6109FB5A210FE2C70087A913 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6109FB66210FE2C90087A913 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6109FB6C210FE2C90087A913 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6109FB55210FE2C70087A913 /* Fitbod-Challenge */;
+			targetProxy = 6109FB6B210FE2C90087A913 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6109FB5D210FE2C70087A913 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6109FB5E210FE2C70087A913 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6109FB63210FE2C80087A913 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6109FB71210FE2C90087A913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6109FB72210FE2C90087A913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6109FB74210FE2C90087A913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fitbod-Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6109FB75210FE2C90087A913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fitbod-Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6109FB77210FE2C90087A913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fitbod-ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitbod-Challenge.app/Fitbod-Challenge";
+			};
+			name = Debug;
+		};
+		6109FB78210FE2C90087A913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fitbod-ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitbod-Challenge.app/Fitbod-Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6109FB51210FE2C60087A913 /* Build configuration list for PBXProject "Fitbod-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6109FB71210FE2C90087A913 /* Debug */,
+				6109FB72210FE2C90087A913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6109FB73210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6109FB74210FE2C90087A913 /* Debug */,
+				6109FB75210FE2C90087A913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6109FB76210FE2C90087A913 /* Build configuration list for PBXNativeTarget "Fitbod-ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6109FB77210FE2C90087A913 /* Debug */,
+				6109FB78210FE2C90087A913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6109FB4E210FE2C60087A913 /* Project object */;
+}
