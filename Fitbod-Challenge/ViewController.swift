@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.red
-        
-        let _ = WorkoutData(csvFileName: "workoutData")
     }
 
     override func didReceiveMemoryWarning() {

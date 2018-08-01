@@ -43,10 +43,12 @@ struct Exercise {
 // Possibly make this Singleton
 struct WorkoutData {
     private let importer: CSVImporter<ExerciseSet?>
-
-    // File name is crucial to the app working. If it doesn't exist, gracefully return nil through the usage of a failing init and allow caller handle
-    // repercussions of failed init
-    init?(csvFileName: String) {
+    static let shared = WorkoutData(csvFileName: "workoutData")
+    
+    /*
+    File name is crucial to the app working. If it doesn't exist, gracefully return nil through the usage of a failing init and allow caller to handle repercussions of failed init
+    */
+    private init?(csvFileName: String) {
         guard let filePath = Bundle.main.path(forResource: csvFileName, ofType: "txt") else {
             return nil
         }
@@ -54,12 +56,11 @@ struct WorkoutData {
         // Note: Not choosing main queue as we want only actual UI updates on main queue, user interactive is sufficient here as the callback
         // needs to happen fast so the UI can be updated right after on the main queue
         importer = CSVImporter<ExerciseSet?>(path: filePath, workQosClass: .utility, callbacksQosClass: .userInteractive)
-        parseCSVFile()
     }
     
-    // MARK - Private
+    // MARK - Public
 
-    private func parseCSVFile() {
+    func parseCSVFile() {
         importer.startImportingRecords { exerciseValues -> ExerciseSet? in
 //            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, let date = DateFormatter.exerciseDateFormatter.date(from: exerciseValues[0]), !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
             guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
@@ -105,6 +106,7 @@ struct WorkoutData {
         }
     }
     
+    // TODO: look into using approximation (a bit different)
     func calculateOneRepMax(_ weight: Float, _ reps: Int) -> Float {
         return Float(weight) * (36.0 / (37.0 - Float(reps)))
     }
