@@ -9,10 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let workoutData: WorkoutData? = WorkoutData.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+
     }
 
     override func didReceiveMemoryWarning() {
