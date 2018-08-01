@@ -8,9 +8,20 @@
 
 import UIKit
 
+extension UIColor {
+    static let fitBod = UIColor(red: 255, green: 110, blue: 96, alpha: 1)
+}
+
 class OneRepMaxViewController: UIViewController {
     let workoutData: WorkoutData? = WorkoutData.shared
     var exerciseData = [Exercise]()
+    
+    private lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        indicator.backgroundColor = UIColor.clear
+        indicator.color = UIColor.fitBod
+        return indicator
+    }()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,13 +36,14 @@ class OneRepMaxViewController: UIViewController {
         }
         // Since parsing the CSV file happens on the background queue, ensure the data source and delegate method are set up on the main queue
         DispatchQueue.main.async {
+            self.view.addSubview(self.activityIndicatorView)
             self.tableView.dataSource = self
             self.tableView.delegate = self
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLayoutSubviews() {
+        activityIndicatorView.frame = .init(x: view.bounds.width/2, y: view.bounds.height/2, width: 40, height: 40)
     }
 }
 
@@ -62,7 +74,10 @@ extension OneRepMaxViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.exerciseData.count
+        let exerciseCount = self.exerciseData.count
+        // TODO: Test with bigger data set
+        exerciseCount == 0 ? activityIndicatorView.startAnimating() : activityIndicatorView.stopAnimating()
+        return exerciseCount
     }
 }
 
