@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ReusableView {
+    func set<T>(viewModel: T)
+    //func set<T>(viewModel: T)
+}
+
 class ExerciseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,4 +27,8 @@ class ExerciseTableViewCell: UITableViewCell {
 
     }
 
+}
+
+extension ExerciseTableViewCell: ReusableView where ViewModel == ExerciseCellViewModel {
+    
 }

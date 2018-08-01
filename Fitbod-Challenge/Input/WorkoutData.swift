@@ -13,7 +13,7 @@ enum CSVFileConstants {
     static let numberOfItemsInLine = 5
 }
 
-// Possibly name this "OneExerciseSet"
+// Possibly name this "OneExerciseSet" or something related to the CSV file per line case
 struct ExerciseSet: Hashable {
     let name: String
 //    let date: Date // don't necessarily need a Date object
@@ -40,10 +40,15 @@ struct Exercise {
     var allTimeMaxDate = ""
 }
 
-// Possibly make this Singleton
-struct WorkoutData {
+protocol WorkoutDataReporting {
+    func didImport(exerciseData: [Exercise])
+}
+
+class WorkoutData {
     private let importer: CSVImporter<ExerciseSet?>
     static let shared = WorkoutData(csvFileName: "workoutData")
+    
+    var delegate: WorkoutDataReporting?
     
     /*
     File name is crucial to the app working. If it doesn't exist, gracefully return nil through the usage of a failing init and allow caller to handle repercussions of failed init
@@ -73,7 +78,7 @@ struct WorkoutData {
             
         }.onFail {
             
-        }.onFinish { exerciseSets in
+        }.onFinish { [weak self] exerciseSets in
             var exerciseMap = [String: Exercise]()
             for exercise in exerciseSets {
                 if let validExercise = exercise {
@@ -86,7 +91,7 @@ struct WorkoutData {
                     
                     // Calculate one rep max
                     let date = validExercise.date
-                    let newOneRepMax = self.calculateOneRepMax(validExercise.weight, validExercise.reps)
+                    let newOneRepMax = self?.calculateOneRepMax(validExercise.weight, validExercise.reps) ?? 0
                     let prevOneRepMax = exerciseMap[name]?.maxRepMap[date] ?? 0
                     
                     // One rep max for specific date
@@ -100,9 +105,8 @@ struct WorkoutData {
                     }
                 }
             }
-            for (name, exercise) in exerciseMap {
-                print("\(name): All time one rep max: \(exercise.allTimeMax) on \(exercise.allTimeMaxDate)")
-            }
+            // TODO: Debug mode
+            self?.delegate?.didImport(exerciseData: Array(exerciseMap.values))
         }
     }
     
