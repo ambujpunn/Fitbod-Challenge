@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OneRepMaxViewController.swift
 //  Fitbod-Challenge
 //
 //  Created by Ambuj Punn on 7/30/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OneRepMaxViewController: UIViewController {
     let workoutData: WorkoutData? = WorkoutData.shared
 
     override func viewDidLoad() {
