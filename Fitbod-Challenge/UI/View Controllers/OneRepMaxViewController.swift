@@ -23,8 +23,11 @@ class OneRepMaxViewController: UIViewController {
         else {
             // Show popup that csv file is invalid
         }
-        tableView.dataSource = self
-        tableView.delegate = self
+        // Since parsing the CSV file happens on the background queue, ensure the data source and delegate method are set up on the main queue
+        DispatchQueue.main.async {
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +48,7 @@ extension OneRepMaxViewController: WorkoutDataReporting {
     
     func viewModels(from exercise: Exercise) -> ExerciseCellViewModel {
         // Converting weight from Float to Int
-        return ExerciseCellViewModel(name: exercise.name, oneRepMaxWeight: Int(exercise.allTimeMax))
+        return ExerciseCellViewModel(name: exercise.name, oneRepMaxWeight: String(Int(exercise.allTimeMax)))
     }
 }
 

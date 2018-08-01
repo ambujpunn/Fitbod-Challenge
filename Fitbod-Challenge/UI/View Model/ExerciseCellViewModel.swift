@@ -14,5 +14,5 @@ protocol ViewModel {
 
 struct ExerciseCellViewModel: ViewModel {
     let name: String
-    let oneRepMaxWeight: Int
+    let oneRepMaxWeight: String
 }

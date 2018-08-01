@@ -9,8 +9,7 @@
 import UIKit
 
 protocol ReusableView {
-    func set<T>(viewModel: T)
-    //func set<T>(viewModel: T)
+    func set<T: ViewModel>(viewModel: T)
 }
 
 class ExerciseTableViewCell: UITableViewCell {
@@ -20,15 +19,21 @@ class ExerciseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameLabel.text = ""
+        weightLabel.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
 }
 
-extension ExerciseTableViewCell: ReusableView where ViewModel == ExerciseCellViewModel {
-    
+extension ExerciseTableViewCell: ReusableView {
+    func set<T>(viewModel: T) where T : ViewModel {
+        if let exerciseViewModel = viewModel as? ExerciseCellViewModel {
+            nameLabel.text = exerciseViewModel.name
+            weightLabel.text = exerciseViewModel.oneRepMaxWeight
+        }
+    }
 }

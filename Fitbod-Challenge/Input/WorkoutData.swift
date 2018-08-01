@@ -67,7 +67,6 @@ class WorkoutData {
 
     func parseCSVFile() {
         importer.startImportingRecords { exerciseValues -> ExerciseSet? in
-//            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, let date = DateFormatter.exerciseDateFormatter.date(from: exerciseValues[0]), !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
             guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
                 return nil
             }
