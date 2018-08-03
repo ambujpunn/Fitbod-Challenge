@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Charts
 
 class ExerciseChartViewController: UIViewController {
     var exercise: Exercise!
 
     @IBOutlet weak var exerciseInfoView: ExerciseTableViewCell!
+    @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +27,9 @@ class ExerciseChartViewController: UIViewController {
     private func setupInfoView() {
         let viewModel = ExerciseCellViewModel(name: exercise.name, oneRepMaxWeight: String(Int(exercise.allTimeMax)))
         exerciseInfoView.set(viewModel: viewModel)
+    }
+    
+    private func setupLineChart() {
+        
     }
 }

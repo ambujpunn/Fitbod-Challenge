@@ -16,8 +16,7 @@ enum CSVFileConstants {
 // Possibly name this "OneExerciseSet" or something related to the CSV file per line case
 struct ExerciseSet: Hashable {
     let name: String
-//    let date: Date // don't necessarily need a Date object
-    let date: String
+    let date: Date
     let reps: Int
     let weight: Float
 }
@@ -35,9 +34,9 @@ extension DateFormatter {
 
 struct Exercise {
     var name = ""
-    var maxRepMap = [String: Float]()
+    var maxRepMap = [Date: Float]()
     var allTimeMax: Float = 0.0
-    var allTimeMaxDate = ""
+    var allTimeMaxDate = Date.init()
 }
 
 protocol WorkoutDataReporting {
@@ -67,10 +66,9 @@ class WorkoutData {
 
     func parseCSVFile() {
         importer.startImportingRecords { exerciseValues -> ExerciseSet? in
-            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
+            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, let date = DateFormatter.exerciseDateFormatter.date(from: exerciseValues[0]), !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
                 return nil
             }
-            let date = exerciseValues[0]
             let name = exerciseValues[1]
             return ExerciseSet(name: name, date: date, reps: reps, weight: weight)
         }.onProgress { numberOfImportedLines in

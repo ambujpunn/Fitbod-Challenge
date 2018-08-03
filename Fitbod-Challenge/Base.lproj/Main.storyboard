@@ -112,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="exerciseInfoView" destination="EPY-9S-Nrs" id="NNg-bG-PP1"/>
+                        <outlet property="lineChartView" destination="ZI7-Bz-tBg" id="m1k-yA-a2w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7F-a0-jYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
