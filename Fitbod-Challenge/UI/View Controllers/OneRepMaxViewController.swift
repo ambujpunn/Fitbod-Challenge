@@ -16,15 +16,15 @@ class OneRepMaxViewController: UIViewController {
     let workoutData: WorkoutData? = WorkoutData.shared
     var exerciseData = [Exercise]()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
         indicator.backgroundColor = UIColor.clear
-        indicator.color = UIColor.fitBod
+        //indicator.color = UIColor.fitBod
         return indicator
     }()
 
-    @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let dataImport = workoutData {
@@ -34,16 +34,35 @@ class OneRepMaxViewController: UIViewController {
         else {
             // Show popup that csv file is invalid
         }
-        // Since parsing the CSV file happens on the background queue, ensure the data source and delegate method are set up on the main queue
+        // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
         DispatchQueue.main.async {
             self.view.addSubview(self.activityIndicatorView)
             self.tableView.dataSource = self
             self.tableView.delegate = self
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+            //self.tableView.tableFooterView = UIView(frame: .zero)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedRow = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRow, animated: true)
         }
     }
 
     override func viewDidLayoutSubviews() {
         activityIndicatorView.frame = .init(x: view.bounds.width/2, y: view.bounds.height/2, width: 40, height: 40)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
+        let coffeeDetailsViewController = segue.destination as! CoffeeDetailsViewController
+        // Dependencies
+        coffeeDetailsViewController.coffeeViewModel = viewModel(for: selectedCoffee)
+        coffeeDetailsViewController.coffeeInfo = (selectedCoffeeIndex, selectedCoffee.id)
+        coffeeDetailsViewController.networkManager = networkManager
+ */
     }
 }
 
@@ -83,5 +102,10 @@ extension OneRepMaxViewController: UITableViewDataSource {
 
 extension OneRepMaxViewController: UITableViewDelegate {
 
+    /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let exerciseChartViewController = ExerciseChartViewController()
+        self.navigationController?.pushViewController(exerciseChartViewController, animated: true)
+    }*/
 }
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExerciseTableViewCell" customModule="Fitbod_Challenge" customModuleProvider="target">
+            <connections>
+                <outlet property="exerciseView" destination="cfw-EO-fHD" id="fZg-po-pex"/>
+                <outlet property="nameLabel" destination="OfJ-Va-mxU" id="de7-Uy-EnG"/>
+                <outlet property="weightLabel" destination="JcS-Md-jXQ" id="3fN-X8-Ow0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="exercise_cell" rowHeight="90" id="cfw-EO-fHD">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cfw-EO-fHD" id="qTI-vX-Fvf">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Exercise Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfJ-Va-mxU">
+                        <rect key="frame" x="16" y="11" width="145.5" height="25.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                        <color key="textColor" red="1" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcS-Md-jXQ">
+                        <rect key="frame" x="293" y="10" width="67" height="26"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                        <color key="textColor" red="1" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Rep Max - lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-M9-M9B">
+                        <rect key="frame" x="16" y="54" width="111" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="CtM-RI-G8x"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="JcS-Md-jXQ" secondAttribute="trailing" constant="15" id="A5S-p6-qx6"/>
+                    <constraint firstItem="JcS-Md-jXQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qTI-vX-Fvf" secondAttribute="leading" constant="20" symbolic="YES" id="J2Z-PA-LBo"/>
+                    <constraint firstItem="JcS-Md-jXQ" firstAttribute="top" secondItem="qTI-vX-Fvf" secondAttribute="top" constant="10" id="Xt2-h7-8Ft"/>
+                    <constraint firstItem="OfJ-Va-mxU" firstAttribute="top" secondItem="qTI-vX-Fvf" secondAttribute="topMargin" id="ZyH-bi-8lJ"/>
+                    <constraint firstItem="OfJ-Va-mxU" firstAttribute="leading" secondItem="qTI-vX-Fvf" secondAttribute="leadingMargin" id="bAJ-Yh-G5m"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wLm-M9-M9B" secondAttribute="trailingMargin" id="f0L-V2-ApT"/>
+                    <constraint firstItem="wLm-M9-M9B" firstAttribute="leading" secondItem="qTI-vX-Fvf" secondAttribute="leadingMargin" id="o1o-EM-uvu"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OfJ-Va-mxU" secondAttribute="trailingMargin" id="ooL-9t-TfG"/>
+                    <constraint firstItem="wLm-M9-M9B" firstAttribute="top" secondItem="OfJ-Va-mxU" secondAttribute="bottom" constant="17.5" id="pA8-bO-KWP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="92" y="-211"/>
+        </tableViewCell>
+    </objects>
+</document>
