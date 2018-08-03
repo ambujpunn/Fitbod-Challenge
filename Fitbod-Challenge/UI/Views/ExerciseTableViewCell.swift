@@ -36,8 +36,11 @@ class ExerciseTableViewCell: UITableViewCell {
 extension ExerciseTableViewCell: ReusableView {
     func set<T>(viewModel: T) where T : ViewModel {
         if let exerciseViewModel = viewModel as? ExerciseCellViewModel {
-            nameLabel.text = exerciseViewModel.name
-            weightLabel.text = exerciseViewModel.oneRepMaxWeight
+            DispatchQueue.main.async {
+                self.nameLabel.text = exerciseViewModel.name
+                self.weightLabel.text = exerciseViewModel.oneRepMaxWeight
+                self.setNeedsLayout()
+            }
         }
     }
 }

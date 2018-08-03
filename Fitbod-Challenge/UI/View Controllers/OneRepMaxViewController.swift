@@ -9,7 +9,11 @@
 import UIKit
 
 extension UIColor {
-    static let fitBod = UIColor(red: 255, green: 110, blue: 96, alpha: 1)
+    static let fitBod = UIColor.customColor(red: 255, green: 110, blue: 96, alpha: 1)
+    
+    static private func customColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
+    }
 }
 
 class OneRepMaxViewController: UIViewController {
@@ -38,9 +42,10 @@ class OneRepMaxViewController: UIViewController {
         DispatchQueue.main.async {
             self.view.addSubview(self.activityIndicatorView)
             self.tableView.dataSource = self
-            self.tableView.delegate = self
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-            //self.tableView.tableFooterView = UIView(frame: .zero)
+            
+            // Gets rid of extra separators on simulator
+            self.tableView.tableFooterView = UIView(frame: .zero)
         }
     }
     
@@ -56,13 +61,14 @@ class OneRepMaxViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
-        let coffeeDetailsViewController = segue.destination as! CoffeeDetailsViewController
-        // Dependencies
-        coffeeDetailsViewController.coffeeViewModel = viewModel(for: selectedCoffee)
-        coffeeDetailsViewController.coffeeInfo = (selectedCoffeeIndex, selectedCoffee.id)
-        coffeeDetailsViewController.networkManager = networkManager
- */
+        if let selectedRow = tableView.indexPathForSelectedRow {
+            navigationItem.backBarButtonItem?.tintColor = .fitBod
+            let exercise = exerciseData[selectedRow.row]
+            // Okay to force unwrap since we've made the segue specifically to the ExerciseChartViewController
+            // Benefits of this is that it will be caught during development if the storyboard is not created correctly
+            let exerciseChartViewController = segue.destination as! ExerciseChartViewController
+            exerciseChartViewController.exercise = exercise
+        }
     }
 }
 
@@ -99,13 +105,3 @@ extension OneRepMaxViewController: UITableViewDataSource {
         return exerciseCount
     }
 }
-
-extension OneRepMaxViewController: UITableViewDelegate {
-
-    /*
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exerciseChartViewController = ExerciseChartViewController()
-        self.navigationController?.pushViewController(exerciseChartViewController, animated: true)
-    }*/
-}
-
