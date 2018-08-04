@@ -36,8 +36,17 @@ class ExerciseChartViewController: UIViewController {
                 return ChartDataEntry(x: date.timeIntervalSince1970, y: Double(maxRep))
         }
         let dataSet = LineChartDataSet(values: entries, label: nil)
+        dataSet.colors = [.fitBod]
+        dataSet.valueColors = [.fitBod]
+        dataSet.circleColors = [.fitBod]
+        dataSet.circleRadius = 3.0
+        
         let lineData = LineChartData(dataSet: dataSet)
         lineChartView.data = lineData
+        lineChartView.maxVisibleCount = 0
+        lineChartView.legend.form = .none
+        lineChartView.chartDescription = nil
+
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
         }
