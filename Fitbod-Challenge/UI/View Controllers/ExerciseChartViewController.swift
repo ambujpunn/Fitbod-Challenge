@@ -33,12 +33,13 @@ class ExerciseChartViewController: UIViewController {
     private func setupLineChart() {
         let entries = exercise.maxRepMap.sorted { $0 < $1 }
             .map { (date, maxRep) in
-                return ChartDataEntry(x: date.timeIntervalSince1970, y: Double(maxRep))
+                return ChartDataEntry(x: date.timeIntervalSince1970, y: Double(Int(maxRep)))
         }
         let dataSet = LineChartDataSet(values: entries, label: nil)
         dataSet.colors = [.fitBod]
         dataSet.valueColors = [.fitBod]
         dataSet.circleColors = [.fitBod]
+        dataSet.highlightColor = .fitBod
         dataSet.circleRadius = 3.0
         
         let lineData = LineChartData(dataSet: dataSet)
@@ -46,6 +47,18 @@ class ExerciseChartViewController: UIViewController {
         lineChartView.maxVisibleCount = 0
         lineChartView.legend.form = .none
         lineChartView.chartDescription = nil
+        
+        // Touch Interaction
+        lineChartView.dragEnabled = false
+        lineChartView.doubleTapToZoomEnabled = false
+        
+        // Axis
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+        lineChartView.xAxis.drawAxisLineEnabled = false
+        lineChartView.leftAxis.drawAxisLineEnabled = false
+        lineChartView.rightAxis.drawAxisLineEnabled = false
 
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
