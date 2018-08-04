@@ -20,6 +20,7 @@ class ExerciseChartViewController: UIViewController {
 
         view.backgroundColor = .black
         setupInfoView()
+        setupLineChart()
     }
     
     // MARK - Private
@@ -30,6 +31,15 @@ class ExerciseChartViewController: UIViewController {
     }
     
     private func setupLineChart() {
-        
+        let entries = exercise.maxRepMap.sorted { $0 < $1 }
+            .map { (date, maxRep) in
+                return ChartDataEntry(x: date.timeIntervalSince1970, y: Double(maxRep))
+        }
+        let dataSet = LineChartDataSet(values: entries, label: nil)
+        let lineData = LineChartData(dataSet: dataSet)
+        lineChartView.data = lineData
+        DispatchQueue.main.async {
+            self.lineChartView.notifyDataSetChanged()
+        }
     }
 }
