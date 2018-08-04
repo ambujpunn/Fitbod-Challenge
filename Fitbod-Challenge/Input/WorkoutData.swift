@@ -100,6 +100,7 @@ class WorkoutData {
                         exerciseMap[name]?.allTimeMax = currentMax
                         exerciseMap[name]?.allTimeMaxDate = date
                     }
+                    // TODO (maybe): return one exercise at a time to be shown (could be beneficial if a lot of data, so as data is being crunched, can start showing exercises that already exist by now
                 }
             }
             // TODO: Debug mode

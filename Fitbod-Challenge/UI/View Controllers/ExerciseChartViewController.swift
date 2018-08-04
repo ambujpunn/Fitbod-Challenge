@@ -18,7 +18,7 @@ class ExerciseChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .black
+        //view.backgroundColor = .black
         setupInfoView()
         setupLineChart()
     }
@@ -59,6 +59,8 @@ class ExerciseChartViewController: UIViewController {
         lineChartView.xAxis.drawAxisLineEnabled = false
         lineChartView.leftAxis.drawAxisLineEnabled = false
         lineChartView.rightAxis.drawAxisLineEnabled = false
+        lineChartView.leftAxis.drawLabelsEnabled = false
+        // TODO: change color of labels on axis
 
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
