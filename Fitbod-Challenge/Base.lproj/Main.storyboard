@@ -93,7 +93,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI7-Bz-tBg" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="100" width="375" height="340"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -103,10 +103,10 @@
                             <constraint firstItem="DFN-gD-vVK" firstAttribute="bottom" secondItem="EPY-9S-Nrs" secondAttribute="bottom" constant="600" id="ILF-4k-xIb"/>
                             <constraint firstItem="ZI7-Bz-tBg" firstAttribute="leading" secondItem="DFN-gD-vVK" secondAttribute="leading" id="Nxc-06-iD9"/>
                             <constraint firstItem="EPY-9S-Nrs" firstAttribute="top" secondItem="DFN-gD-vVK" secondAttribute="top" id="a82-Mn-Xv2"/>
-                            <constraint firstItem="ZI7-Bz-tBg" firstAttribute="top" secondItem="EPY-9S-Nrs" secondAttribute="bottom" constant="10" id="bsB-Ju-yCM"/>
+                            <constraint firstItem="ZI7-Bz-tBg" firstAttribute="top" secondItem="EPY-9S-Nrs" secondAttribute="bottom" id="bsB-Ju-yCM"/>
                             <constraint firstItem="ZI7-Bz-tBg" firstAttribute="trailing" secondItem="DFN-gD-vVK" secondAttribute="trailing" id="hdc-4A-TOe"/>
                             <constraint firstItem="EPY-9S-Nrs" firstAttribute="trailing" secondItem="DFN-gD-vVK" secondAttribute="trailing" id="i9v-pN-f6W"/>
-                            <constraint firstItem="DFN-gD-vVK" firstAttribute="bottom" secondItem="ZI7-Bz-tBg" secondAttribute="bottom" constant="250" id="tqL-Pl-VaE"/>
+                            <constraint firstItem="DFN-gD-vVK" firstAttribute="bottom" secondItem="ZI7-Bz-tBg" secondAttribute="bottom" constant="350" id="tqL-Pl-VaE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFN-gD-vVK"/>
                     </view>
