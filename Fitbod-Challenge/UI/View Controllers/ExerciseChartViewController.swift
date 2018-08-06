@@ -82,6 +82,10 @@ class ExerciseChartViewController: UIViewController {
         // Set up offsets
         lineChartView.setExtraOffsets(left: 30, top: 0, right: 0, bottom: 0)
         lineChartView.xAxis.yOffset = 30
+        
+        // Set up max and min based on data
+        lineChartView.rightAxis.axisMaximum = dataSet.yMax
+        lineChartView.rightAxis.axisMinimum = dataSet.yMin
 
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
