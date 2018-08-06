@@ -14,12 +14,12 @@
 		6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6109FB62210FE2C80087A913 /* LaunchScreen.storyboard */; };
 		6109FB6F210FE2C90087A913 /* Fitbod_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */; };
 		6109FB7D210FE32E0087A913 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109FB7C210FE32E0087A913 /* WorkoutData.swift */; };
-		612546BA210FF25A001AB56B /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 612546B9210FF25A001AB56B /* workoutData.txt */; };
 		612546BC2111F2DC001AB56B /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 612546BB2111F2DC001AB56B /* test.txt */; };
 		61517AB621120BBA003AC63B /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61517AB521120BBA003AC63B /* ExerciseTableViewCell.swift */; };
 		61750F7D21129E6000F72149 /* ExerciseChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61750F7C21129E6000F72149 /* ExerciseChartViewController.swift */; };
 		61750F7F2113DBF600F72149 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61750F7E2113DBF600F72149 /* ExerciseTableViewCell.xib */; };
 		61750F822117D77600F72149 /* XAxisDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61750F812117D77600F72149 /* XAxisDateFormatter.swift */; };
+		617F80FB21181A81005A18C2 /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 617F80FA21181A81005A18C2 /* workoutData.txt */; };
 		619F128A2112395100C2181A /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F12892112395100C2181A /* ExerciseCellViewModel.swift */; };
 		A620E3DF23BB15D51F165199 /* Pods_Fitbod_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA34F3CAD2F184A50DD48187 /* Pods_Fitbod_Challenge.framework */; };
 		DA22DFC22C99432E6A91723E /* Pods_Fitbod_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A539CC7C6A97939709D69BB /* Pods_Fitbod_ChallengeTests.framework */; };
@@ -49,12 +49,12 @@
 		6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitbod_ChallengeTests.swift; sourceTree = "<group>"; };
 		6109FB70210FE2C90087A913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6109FB7C210FE32E0087A913 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
-		612546B9210FF25A001AB56B /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
 		612546BB2111F2DC001AB56B /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		61517AB521120BBA003AC63B /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		61750F7C21129E6000F72149 /* ExerciseChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewController.swift; sourceTree = "<group>"; };
 		61750F7E2113DBF600F72149 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		61750F812117D77600F72149 /* XAxisDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisDateFormatter.swift; sourceTree = "<group>"; };
+		617F80FA21181A81005A18C2 /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
 		619F12892112395100C2181A /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
 		88FD2D253E48B0BBBC6424EF /* Pods-Fitbod-ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-ChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-ChallengeTests/Pods-Fitbod-ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B72FA5D274AF4FCDB06BA490 /* Pods-Fitbod-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitbod-Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fitbod-Challenge/Pods-Fitbod-Challenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		6109FB79210FE3010087A913 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				612546B9210FF25A001AB56B /* workoutData.txt */,
+				617F80FA21181A81005A18C2 /* workoutData.txt */,
 				6109FB7C210FE32E0087A913 /* WorkoutData.swift */,
 				612546BB2111F2DC001AB56B /* test.txt */,
 			);
@@ -286,7 +286,7 @@
 			files = (
 				6109FB64210FE2C80087A913 /* LaunchScreen.storyboard in Resources */,
 				6109FB61210FE2C80087A913 /* Assets.xcassets in Resources */,
-				612546BA210FF25A001AB56B /* workoutData.txt in Resources */,
+				617F80FB21181A81005A18C2 /* workoutData.txt in Resources */,
 				61750F7F2113DBF600F72149 /* ExerciseTableViewCell.xib in Resources */,
 				6109FB5F210FE2C70087A913 /* Main.storyboard in Resources */,
 				612546BC2111F2DC001AB56B /* test.txt in Resources */,
@@ -541,7 +541,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Fitbod-Challenge/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -559,7 +562,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Fitbod-Challenge/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -576,7 +582,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Fitbod-ChallengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -593,7 +603,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Fitbod-ChallengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ambuj-Punn.Fitbod-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
