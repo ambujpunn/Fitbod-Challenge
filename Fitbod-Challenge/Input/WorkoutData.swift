@@ -18,7 +18,7 @@ enum WorkoutDataImportingError: Error {
     case nonExistentWorkoutFile
 }
 
-struct ExerciseSet: Hashable {
+struct ExerciseSet {
     let name: String
     let date: Date
     let reps: Int
