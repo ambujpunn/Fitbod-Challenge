@@ -11,6 +11,7 @@ import CSVImporter
 
 enum CSVFileConstants {
     static let numberOfItemsInLine = 5
+    static let fileName = "workoutData"
 }
 
 // Possibly name this "OneExerciseSet" or something related to the CSV file per line case
@@ -45,7 +46,7 @@ protocol WorkoutDataReporting {
 
 class WorkoutData {
     private let importer: CSVImporter<ExerciseSet?>
-    static let shared = WorkoutData(csvFileName: "workoutData")
+    static let shared = WorkoutData(csvFileName: CSVFileConstants.fileName)
     
     var delegate: WorkoutDataReporting?
     
@@ -100,7 +101,6 @@ class WorkoutData {
                         exerciseMap[name]?.allTimeMax = currentMax
                         exerciseMap[name]?.allTimeMaxDate = date
                     }
-                    // TODO (maybe): return one exercise at a time to be shown (could be beneficial if a lot of data, so as data is being crunched, can start showing exercises that already exist by now
                 }
             }
             // TODO: Debug mode

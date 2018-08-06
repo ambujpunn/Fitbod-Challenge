@@ -3,6 +3,9 @@ Oct 11 2017,Back Squat,1,10,135
 Oct 1 2017,Back Squat,1,6,315
 Oct 1 2018,Front,1,6,315
 July 2 2018,Front,1,6,500
+December 6 2018,Bench,1,2,215
+December 8 2018,Bench,1,2,215
+Jan 6 2018,Bench,1,2,215
 Oct 12 2017,Back Squat,1,6,245
 Oct 1 2018,Front,1,6,200
 Oct 1 2018,Front,1,6,185
