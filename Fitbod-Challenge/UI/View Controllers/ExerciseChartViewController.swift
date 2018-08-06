@@ -37,7 +37,6 @@ class ExerciseChartViewController: UIViewController {
         }
         let dataSet = LineChartDataSet(values: entries, label: nil)
         dataSet.colors = [.fitBod]
-        dataSet.valueColors = [.fitBod]
         dataSet.circleColors = [.fitBod]
         dataSet.highlightColor = .fitBod
         dataSet.circleRadius = 3.0
@@ -69,9 +68,20 @@ class ExerciseChartViewController: UIViewController {
         // Show x-axis values on bottom
         lineChartView.xAxis.labelPosition = .bottom
         
-        // Axis values should be custom color
+        // Customize axis labels
         lineChartView.xAxis.labelTextColor = .fitBod
         lineChartView.rightAxis.labelTextColor = .fitBod
+        lineChartView.rightAxis.labelFont = .systemFont(ofSize: 12)
+        lineChartView.xAxis.labelFont = .systemFont(ofSize: 12)
+        lineChartView.rightAxis.setLabelCount(2, force: true)
+        lineChartView.xAxis.setLabelCount(4, force: true)
+        
+        // Format x axis date values
+        lineChartView.xAxis.valueFormatter = XAxisDateFormatter()
+        
+        // Set up offsets
+        lineChartView.setExtraOffsets(left: 30, top: 0, right: 0, bottom: 0)
+        lineChartView.xAxis.yOffset = 30
 
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
