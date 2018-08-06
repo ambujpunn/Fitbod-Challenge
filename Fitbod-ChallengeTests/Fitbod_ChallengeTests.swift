@@ -37,7 +37,7 @@ class Fitbod_ChallengeTests: XCTestCase {
     }
     
     func testIfWorkoutDataFileExists() {
-        XCTAssertThrowsError(try workoutData.parseCSV(file: "test1"), "Error not thrown") { (error) in
+        XCTAssertThrowsError(try workoutData.parseCSV(file: "test1"), "Missing file error not thrown") { (error) in
             if let nonExistentFileError = error as? WorkoutDataImportingError {
                 XCTAssertEqual(nonExistentFileError, WorkoutDataImportingError.nonExistentWorkoutFile, "Wrong error thrown")
             }
