@@ -18,7 +18,6 @@ enum WorkoutDataImportingError: Error {
     case nonExistentWorkoutFile
 }
 
-// Possibly name this "OneExerciseSet" or something related to the CSV file per line case
 struct ExerciseSet: Hashable {
     let name: String
     let date: Date
