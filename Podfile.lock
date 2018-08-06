@@ -5,22 +5,28 @@ PODS:
   - CSVImporter (1.9.0):
     - HandySwift (~> 2.5)
   - HandySwift (2.6.0)
+  - NVActivityIndicatorView (4.3.0):
+    - NVActivityIndicatorView/Presenter (= 4.3.0)
+  - NVActivityIndicatorView/Presenter (4.3.0)
 
 DEPENDENCIES:
   - Charts
   - CSVImporter (~> 1.9)
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Charts
     - CSVImporter
     - HandySwift
+    - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   CSVImporter: 34c3f9a2f47c61c7e2c830073002b00a682c32ee
   HandySwift: 510039979f68ab2c6866f1707634815654ed329b
+  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
 
-PODFILE CHECKSUM: d2171d306f6e789e67c48774d123b52eb35a09db
+PODFILE CHECKSUM: 7e1140b0fedb214e28c0c71401d9c1654a522363
 
 COCOAPODS: 1.5.0

@@ -8,6 +8,7 @@ target 'Fitbod-Challenge' do
   # Pods for Fitbod-Challenge
   pod 'CSVImporter', '~> 1.9'
   pod 'Charts'
+  pod 'NVActivityIndicatorView'
 
   target 'Fitbod-ChallengeTests' do
     inherit! :search_paths
