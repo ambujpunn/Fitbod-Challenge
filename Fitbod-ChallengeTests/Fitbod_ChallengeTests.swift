@@ -12,7 +12,6 @@ import XCTest
 class Fitbod_ChallengeTests: XCTestCase {
     var workoutData: WorkoutData!
     var importedExerices: [Exercise]!
-    var numberOfLinesImported: Int!
     var delegateExpectation: XCTestExpectation!
     
     override func setUp() {
