@@ -32,7 +32,7 @@ class OneRepMaxViewController: UIViewController {
         if let dataImport = workoutData {
             dataImport.delegate = self
             dataImport.parseCSVFile()
-            
+
             // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
             DispatchQueue.main.async {
                 self.startAnimating(message: "Importing CSV File...", type: NVActivityIndicatorType.orbit, color: .fitBod, textColor: .fitBod)
