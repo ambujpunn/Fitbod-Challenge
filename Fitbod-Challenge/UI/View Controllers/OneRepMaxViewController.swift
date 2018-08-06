@@ -32,7 +32,7 @@ class OneRepMaxViewController: UIViewController {
         if let dataImport = workoutData {
             dataImport.delegate = self
             dataImport.parseCSVFile()
-            
+
             // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
             DispatchQueue.main.async {
                 self.startAnimating(message: "Importing CSV File...", type: NVActivityIndicatorType.orbit, color: .fitBod, textColor: .fitBod)
@@ -97,13 +97,6 @@ extension OneRepMaxViewController: WorkoutDataReporting {
             self.present(self.errorAlert, animated: true, completion: nil)
         }
     }
-    
-    // MARK - Private
-    
-    func viewModels(from exercise: Exercise) -> ExerciseCellViewModel {
-        // Converting weight from Float to Int
-        return ExerciseCellViewModel(name: exercise.name, oneRepMaxWeight: String(Int(exercise.allTimeMax)))
-    }
 }
 
 extension OneRepMaxViewController: UITableViewDataSource {
@@ -117,5 +110,12 @@ extension OneRepMaxViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exerciseData.count
+    }
+    
+    // MARK - Private
+    
+    func viewModels(from exercise: Exercise) -> ExerciseCellViewModel {
+        // Converting weight from Float to Int
+        return ExerciseCellViewModel(name: exercise.name, oneRepMaxWeight: String(Int(exercise.allTimeMax)))
     }
 }

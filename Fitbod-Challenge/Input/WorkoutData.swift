@@ -14,6 +14,10 @@ enum CSVFileConstants {
     static let fileName = "workoutData"
 }
 
+enum WorkoutDataImportingError: Error {
+    case nonExistentWorkoutFile
+}
+
 // Possibly name this "OneExerciseSet" or something related to the CSV file per line case
 struct ExerciseSet: Hashable {
     let name: String
@@ -47,7 +51,7 @@ protocol WorkoutDataReporting {
 }
 
 class WorkoutData {
-    private let importer: CSVImporter<ExerciseSet?>
+    private var importer: CSVImporter<ExerciseSet?>
     static let shared = WorkoutData(csvFileName: CSVFileConstants.fileName)
     
     var delegate: WorkoutDataReporting?
@@ -106,6 +110,15 @@ class WorkoutData {
             }
             self?.delegate?.didImport(exerciseData: Array(exerciseMap.values))
         }
+    }
+    
+    // Give client ability to specify specific file if need be
+    func parseCSV(file: String) throws {
+        guard let filePath = Bundle.main.path(forResource: file, ofType: "txt") else {
+            throw WorkoutDataImportingError.nonExistentWorkoutFile
+        }
+        importer = CSVImporter<ExerciseSet?>(path: filePath, workQosClass: .utility, callbacksQosClass: .userInteractive)
+        parseCSVFile()
     }
     
     // Note: Using exact insead of approximation

@@ -131,6 +131,7 @@
 		6109FB6D210FE2C90087A913 /* Fitbod-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				612546BB2111F2DC001AB56B /* test.txt */,
 				6109FB6E210FE2C90087A913 /* Fitbod_ChallengeTests.swift */,
 				6109FB70210FE2C90087A913 /* Info.plist */,
 			);
@@ -142,7 +143,6 @@
 			children = (
 				617F80FA21181A81005A18C2 /* workoutData.txt */,
 				6109FB7C210FE32E0087A913 /* WorkoutData.swift */,
-				612546BB2111F2DC001AB56B /* test.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
