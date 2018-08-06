@@ -43,6 +43,7 @@ struct Exercise {
 protocol WorkoutDataReporting {
     func importProgress(numberOfLinesImported: Int)
     func didImport(exerciseData: [Exercise])
+    func importFailed()
 }
 
 class WorkoutData {
@@ -74,8 +75,8 @@ class WorkoutData {
             return ExerciseSet(name: name, date: date, reps: reps, weight: weight)
         }.onProgress { [weak self] numberOfImportedLines in
             self?.delegate?.importProgress(numberOfLinesImported: numberOfImportedLines)
-        }.onFail {
-            
+        }.onFail { [weak self] in
+            self?.delegate?.importFailed()
         }.onFinish { [weak self] exerciseSets in
             var exerciseMap = [String: Exercise]()
             for exercise in exerciseSets {

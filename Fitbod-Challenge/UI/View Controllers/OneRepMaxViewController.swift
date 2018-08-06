@@ -21,6 +21,10 @@ class OneRepMaxViewController: UIViewController {
     let workoutData: WorkoutData? = WorkoutData.shared
     var exerciseData = [Exercise]()
     
+    lazy var errorAlert: UIAlertController = {
+        return UIAlertController(title: "Non Existent CSV File", message: "Couldn't find file. Please close the app and import valid CSV file in project.", preferredStyle: .alert)
+    }()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -28,18 +32,19 @@ class OneRepMaxViewController: UIViewController {
         if let dataImport = workoutData {
             dataImport.delegate = self
             dataImport.parseCSVFile()
+            
+            // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
+            DispatchQueue.main.async {
+                self.startAnimating(message: "Importing CSV File...", type: NVActivityIndicatorType.orbit, color: .fitBod, textColor: .fitBod)
+                self.tableView.dataSource = self
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                
+                // Gets rid of extra separators on simulator
+                self.tableView.tableFooterView = UIView(frame: .zero)
+            }
         }
         else {
-            // Show popup that csv file is invalid
-        }
-        // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
-        DispatchQueue.main.async {
-            self.startAnimating(message: "Importing CSV File...", type: NVActivityIndicatorType.orbit, color: .fitBod, textColor: .fitBod)
-            self.tableView.dataSource = self
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-            
-            // Gets rid of extra separators on simulator
-            self.tableView.tableFooterView = UIView(frame: .zero)
+            self.present(errorAlert, animated: true, completion: nil)
         }
     }
     
@@ -75,8 +80,21 @@ extension OneRepMaxViewController: WorkoutDataReporting {
     }
     
     func importProgress(numberOfLinesImported: Int) {
-        if isAnimating {
-            NVActivityIndicatorPresenter.sharedInstance.setMessage("Imported \(numberOfLinesImported) lines...")
+        DispatchQueue.main.async {
+            if self.isAnimating {
+                NVActivityIndicatorPresenter.sharedInstance.setMessage("Imported \(numberOfLinesImported) lines...")
+            }
+        }
+    }
+    
+    func importFailed() {
+        DispatchQueue.main.async {
+            if self.isAnimating {
+                self.stopAnimating()
+            }
+            self.errorAlert.title = "Invalid Data File"
+            self.errorAlert.message = "Could not import data file."
+            self.present(self.errorAlert, animated: true, completion: nil)
         }
     }
     
