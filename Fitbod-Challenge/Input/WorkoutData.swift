@@ -11,13 +11,13 @@ import CSVImporter
 
 enum CSVFileConstants {
     static let numberOfItemsInLine = 5
+    static let fileName = "workoutData"
 }
 
 // Possibly name this "OneExerciseSet" or something related to the CSV file per line case
 struct ExerciseSet: Hashable {
     let name: String
-//    let date: Date // don't necessarily need a Date object
-    let date: String
+    let date: Date
     let reps: Int
     let weight: Float
 }
@@ -35,18 +35,20 @@ extension DateFormatter {
 
 struct Exercise {
     var name = ""
-    var maxRepMap = [String: Float]()
+    var maxRepMap = [Date: Float]()
     var allTimeMax: Float = 0.0
-    var allTimeMaxDate = ""
+    var allTimeMaxDate = Date.init()
 }
 
 protocol WorkoutDataReporting {
+    func importProgress(numberOfLinesImported: Int)
     func didImport(exerciseData: [Exercise])
+    func importFailed()
 }
 
 class WorkoutData {
     private let importer: CSVImporter<ExerciseSet?>
-    static let shared = WorkoutData(csvFileName: "workoutData")
+    static let shared = WorkoutData(csvFileName: CSVFileConstants.fileName)
     
     var delegate: WorkoutDataReporting?
     
@@ -58,8 +60,7 @@ class WorkoutData {
             return nil
         }
         // Importing work will happen on .utility global background queue, callback will be called on the user interactive queue
-        // Note: Not choosing main queue as we want only actual UI updates on main queue, user interactive is sufficient here as the callback
-        // needs to happen fast so the UI can be updated right after on the main queue
+        // Note: Not choosing main queue as we want only actual UI updates on main queue, user interactive is sufficient here as the callback needs to happen fast so the UI can be updated right after on the main queue
         importer = CSVImporter<ExerciseSet?>(path: filePath, workQosClass: .utility, callbacksQosClass: .userInteractive)
     }
     
@@ -67,16 +68,15 @@ class WorkoutData {
 
     func parseCSVFile() {
         importer.startImportingRecords { exerciseValues -> ExerciseSet? in
-            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
+            guard exerciseValues.count == CSVFileConstants.numberOfItemsInLine, let date = DateFormatter.exerciseDateFormatter.date(from: exerciseValues[0]), !exerciseValues[1].isEmpty, let reps = Int(exerciseValues[3]), let weight = Float(exerciseValues[4]) else {
                 return nil
             }
-            let date = exerciseValues[0]
             let name = exerciseValues[1]
             return ExerciseSet(name: name, date: date, reps: reps, weight: weight)
-        }.onProgress { numberOfImportedLines in
-            
-        }.onFail {
-            
+        }.onProgress { [weak self] numberOfImportedLines in
+            self?.delegate?.importProgress(numberOfLinesImported: numberOfImportedLines)
+        }.onFail { [weak self] in
+            self?.delegate?.importFailed()
         }.onFinish { [weak self] exerciseSets in
             var exerciseMap = [String: Exercise]()
             for exercise in exerciseSets {
@@ -104,12 +104,11 @@ class WorkoutData {
                     }
                 }
             }
-            // TODO: Debug mode
             self?.delegate?.didImport(exerciseData: Array(exerciseMap.values))
         }
     }
     
-    // TODO: look into using approximation (a bit different)
+    // Note: Using exact insead of approximation
     func calculateOneRepMax(_ weight: Float, _ reps: Int) -> Float {
         return Float(weight) * (36.0 / (37.0 - Float(reps)))
     }

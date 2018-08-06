@@ -14,6 +14,7 @@ protocol ReusableView {
 
 class ExerciseTableViewCell: UITableViewCell {
 
+    @IBOutlet var exerciseView: UITableViewCell!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
@@ -23,17 +24,23 @@ class ExerciseTableViewCell: UITableViewCell {
         weightLabel.text = ""
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        Bundle.main.loadNibNamed("ExerciseTableViewCell", owner: self, options: nil)
+        exerciseView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        addSubview(exerciseView)
     }
-
 }
 
 extension ExerciseTableViewCell: ReusableView {
     func set<T>(viewModel: T) where T : ViewModel {
         if let exerciseViewModel = viewModel as? ExerciseCellViewModel {
-            nameLabel.text = exerciseViewModel.name
-            weightLabel.text = exerciseViewModel.oneRepMaxWeight
+            DispatchQueue.main.async {
+                self.nameLabel.text = exerciseViewModel.name
+                self.weightLabel.text = exerciseViewModel.oneRepMaxWeight
+                self.setNeedsLayout()
+            }
         }
     }
 }
