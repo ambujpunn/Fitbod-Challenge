@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 extension UIColor {
     static let fitBod = UIColor.customColor(red: 255, green: 110, blue: 96, alpha: 1)
@@ -22,13 +23,6 @@ class OneRepMaxViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private lazy var activityIndicatorView: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
-        indicator.backgroundColor = UIColor.clear
-        //indicator.color = UIColor.fitBod
-        return indicator
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         if let dataImport = workoutData {
@@ -40,7 +34,7 @@ class OneRepMaxViewController: UIViewController {
         }
         // Since parsing the CSV file happens on the background queue asynchronously, ensure the data source and delegate method are set up on the main queue
         DispatchQueue.main.async {
-            self.view.addSubview(self.activityIndicatorView)
+            self.startAnimating(message: "Importing CSV File...", type: NVActivityIndicatorType.orbit, color: .fitBod, textColor: .fitBod)
             self.tableView.dataSource = self
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
             
@@ -56,10 +50,6 @@ class OneRepMaxViewController: UIViewController {
         }
     }
 
-    override func viewDidLayoutSubviews() {
-        activityIndicatorView.frame = .init(x: view.bounds.width/2, y: view.bounds.height/2, width: 40, height: 40)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedRow = tableView.indexPathForSelectedRow {
             navigationItem.backBarButtonItem?.tintColor = .fitBod
@@ -72,12 +62,21 @@ class OneRepMaxViewController: UIViewController {
     }
 }
 
+extension OneRepMaxViewController: NVActivityIndicatorViewable {}
+
 extension OneRepMaxViewController: WorkoutDataReporting {
     
     func didImport(exerciseData: [Exercise]) {
         self.exerciseData = exerciseData
         DispatchQueue.main.async {
+            self.stopAnimating()
             self.tableView.reloadData()
+        }
+    }
+    
+    func importProgress(numberOfLinesImported: Int) {
+        if isAnimating {
+            NVActivityIndicatorPresenter.sharedInstance.setMessage("Imported \(numberOfLinesImported) lines...")
         }
     }
     
@@ -99,9 +98,6 @@ extension OneRepMaxViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let exerciseCount = self.exerciseData.count
-        // TODO: Test with bigger data set
-        exerciseCount == 0 ? activityIndicatorView.startAnimating() : activityIndicatorView.stopAnimating()
-        return exerciseCount
+        return exerciseData.count
     }
 }

@@ -41,6 +41,7 @@ struct Exercise {
 }
 
 protocol WorkoutDataReporting {
+    func importProgress(numberOfLinesImported: Int)
     func didImport(exerciseData: [Exercise])
 }
 
@@ -58,8 +59,7 @@ class WorkoutData {
             return nil
         }
         // Importing work will happen on .utility global background queue, callback will be called on the user interactive queue
-        // Note: Not choosing main queue as we want only actual UI updates on main queue, user interactive is sufficient here as the callback
-        // needs to happen fast so the UI can be updated right after on the main queue
+        // Note: Not choosing main queue as we want only actual UI updates on main queue, user interactive is sufficient here as the callback needs to happen fast so the UI can be updated right after on the main queue
         importer = CSVImporter<ExerciseSet?>(path: filePath, workQosClass: .utility, callbacksQosClass: .userInteractive)
     }
     
@@ -72,8 +72,8 @@ class WorkoutData {
             }
             let name = exerciseValues[1]
             return ExerciseSet(name: name, date: date, reps: reps, weight: weight)
-        }.onProgress { numberOfImportedLines in
-            
+        }.onProgress { [weak self] numberOfImportedLines in
+            self?.delegate?.importProgress(numberOfLinesImported: numberOfImportedLines)
         }.onFail {
             
         }.onFinish { [weak self] exerciseSets in
@@ -103,12 +103,11 @@ class WorkoutData {
                     }
                 }
             }
-            // TODO: Debug mode
             self?.delegate?.didImport(exerciseData: Array(exerciseMap.values))
         }
     }
     
-    // TODO: look into using approximation (a bit different)
+    // Note: Using exact insead of approximation
     func calculateOneRepMax(_ weight: Float, _ reps: Int) -> Float {
         return Float(weight) * (36.0 / (37.0 - Float(reps)))
     }
