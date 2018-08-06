@@ -18,7 +18,7 @@ class ExerciseChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //view.backgroundColor = .black
+        view.backgroundColor = .black
         setupInfoView()
         setupLineChart()
     }
@@ -53,14 +53,25 @@ class ExerciseChartViewController: UIViewController {
         lineChartView.doubleTapToZoomEnabled = false
         
         // Axis
+        // Disable grid lines
         lineChartView.xAxis.drawGridLinesEnabled = false
         lineChartView.leftAxis.drawGridLinesEnabled = false
         lineChartView.rightAxis.drawGridLinesEnabled = false
+        
+        // Disable axis lines
         lineChartView.xAxis.drawAxisLineEnabled = false
         lineChartView.leftAxis.drawAxisLineEnabled = false
         lineChartView.rightAxis.drawAxisLineEnabled = false
+        
+        // Disable labels on left y axis
         lineChartView.leftAxis.drawLabelsEnabled = false
-        // TODO: change color of labels on axis
+        
+        // Show x-axis values on bottom
+        lineChartView.xAxis.labelPosition = .bottom
+        
+        // Axis values should be custom color
+        lineChartView.xAxis.labelTextColor = .fitBod
+        lineChartView.rightAxis.labelTextColor = .fitBod
 
         DispatchQueue.main.async {
             self.lineChartView.notifyDataSetChanged()
